@@ -22,8 +22,7 @@ class TimeTask implements Runnable {
         System.out.printf("Time passed: %.2f seconds%n", elapsedMillis / 1000.0);
 
         if (elapsedMillis % 5000 == 0) {
-            long minutesPassed = elapsedMillis / (1000 * 60);
-            System.out.println(minutesPassed + " minutes passed");
+            System.out.println("5 seconds passed");
         }
     }
 }

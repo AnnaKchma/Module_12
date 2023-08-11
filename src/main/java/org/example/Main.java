@@ -2,8 +2,7 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        int n = 20; // Change n as needed
-
+        int n = 15; // Change n as needed
         FizzBuzzMultithreaded fizzBuzz = new FizzBuzzMultithreaded(n);
 
         Thread threadA = new Thread(() -> {
@@ -44,3 +43,4 @@ public class Main {
         threadD.start();
     }
 }
+
