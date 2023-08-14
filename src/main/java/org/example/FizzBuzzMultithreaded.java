@@ -4,8 +4,8 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 public class FizzBuzzMultithreaded {
-    protected int n;
-    private final BlockingQueue<String> queue = new ArrayBlockingQueue<>(1);
+    private int n;
+    private BlockingQueue<String> queue = new ArrayBlockingQueue<>(1);
 
     public FizzBuzzMultithreaded(int n) {
         this.n = n;
@@ -35,10 +35,15 @@ public class FizzBuzzMultithreaded {
 
     public void number() throws InterruptedException {
         for (int i = 1; i <= n; i++) {
-            if (i % 3 != 0 && i % 5 != 0) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                queue.put("fizzbuzz");
+            } else if (i % 3 == 0) {
+                queue.put("fizz");
+            } else if (i % 5 == 0) {
+                queue.put("buzz");
+            } else {
                 queue.put(Integer.toString(i));
             }
-            queue.take();
         }
     }
 }
